@@ -1,0 +1,135 @@
+main{
+  flex-grow: 1;
+  display: grid;
+  place-content: center;
+}
+
+#my-image{
+  display: block;
+  width: 150px;
+  border-radius: 50%;
+  margin: 0 auto 24px;
+}
+
+main h2{
+  font-weight: normal;
+  font-size: 1.375rem;
+  text-align: center;
+}
+
+.software-engineer{
+  margin-top: 0.75rem;
+}
+
+.overview-chevron{
+  display: block;
+  height: 16px;
+  width: 16px;
+  border-left: 2px solid #F06543;
+  border-top: 2px solid #F06543;
+  rotate: 45deg;
+}
+
+#overview-button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2rem;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 0;
+  border: none;
+  background-color: transparent;
+  color: #FDFDFD;
+}
+
+#overview-modal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(22, 26, 27, 0.9);
+  backdrop-filter: blur(4px);
+  z-index: 10;
+  padding: 24px;
+  display: none;
+  flex-direction: column;
+}
+
+#close-overview-wrapper{
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+#close-overview-button{
+  font-size: 48px;
+  line-height: 1;
+  color: #F06543;
+  padding: 0 4px;
+}
+
+#overview-content{
+  margin-top: 48px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  background-color: #181C1D;
+  border-radius: 16px;
+  flex-grow: 1;
+}
+
+#overview-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(252, 231, 98, 0.15);
+}
+
+#overview-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#overview-content-wrapper p {
+  font-size: 1.125rem;
+  line-height: 1.8rem;
+}
+
+#overview-controls-wrapper {
+  width: 100%;
+  margin-top: 48px;
+  gap: 24px;
+  display: flex;
+}
+
+#overview-controls-wrapper button{
+  flex: 1
+}
+
+#overview-slide-indicators-wrapper{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.slide-indicator{
+  display: block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.5);
+}
+
+.slide-indicator.slide-indicator-active{
+  height: 12px;
+  width: 12px;
+  background-color: #E0DFD5;
+}

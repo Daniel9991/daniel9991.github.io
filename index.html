@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/home.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Daniel Fernandez</title>
+</head>
+<body>
+  <nav>
+    <div id="hamburger-wrapper">
+      <button id="closed-hamburger-button" class="hamburger-button">
+        <div id="closed-hamburger-icon" class="hamburger-icon">
+          <div class="hamburger-line hamburger-long-line hamburger-orange-line"></div>
+          <div class="hamburger-line hamburger-short-line hamburger-yellow-line"></div>
+          <div class="hamburger-line hamburger-long-line hamburger-orange-line"></div>
+        </div>
+      </button>
+      <section id="hamburger-menu" open="false">
+        <button id="open-hamburger-button" class="hamburger-button">
+          <div id="open-hamburger-icon" class="hamburger-icon">
+            <div class="hamburger-line hamburger-short-line hamburger-orange-line"></div>
+            <div class="hamburger-line hamburger-long-line hamburger-yellow-line"></div>
+            <div class="hamburger-line hamburger-short-line hamburger-orange-line"></div>
+          </div>
+        </button>
+        <div id="nav-links-wrapper">
+          <p class="nav-link active-link">Home</p>
+          <p class="nav-link">Projects</p>
+          <p class="nav-link">Skills</p>
+          <p class="nav-link">Blog</p>
+          <p class="nav-link">About</p>
+          <a href="/cv.html" class="nav-link">CV</a>
+        </div>
+      </section>
+    </div>
+    <button id="rss-button">
+      <div id="rss-icon">
+        <span id="rss-icon-circle"></span>
+        <span id="rss-icon-first-wave"></span>
+        <span id="rss-icon-second-wave"></span>
+      </div>
+    </button>
+  </nav>
+  <main>
+    <div>
+      <img id="my-image" src="/assets/images/me.jpg" />
+      <h2 class="">I'm Daniel Fernandez.</h2>
+      <h2 class="software-engineer">Software Engineer.</h2>
+    </div>
+  </main>
+  <section id="overview-modal">
+    <div id="close-overview-wrapper">
+      <button id="close-overview-button" class="button">
+        &times;
+      </button>
+    </div>
+    <article id="overview-content">
+      <h2 id="overview-title"></h2>
+      <section id="overview-content-wrapper">
+      </section>
+    </article>
+    <div id="overview-controls-wrapper">
+      <button id="previous-overview-button" class="button secondary-button medium-button">Previous</button>
+      <button id="next-overview-button" class="button secondary-button medium-button">Next</button>
+    </div>
+    <div id="overview-slide-indicators-wrapper"></div>
+  </section>
+  <button id="overview-button">
+    <span class="overview-chevron"></span>
+    Quick Overview
+  </button>
+  <script src="/code/code.js"></script>
+  <script src="/code/home.js"></script>
+</body>
+</html>
