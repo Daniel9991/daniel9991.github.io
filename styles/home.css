@@ -1,3 +1,9 @@
+#landing{
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
 main{
   flex-grow: 1;
   display: grid;
@@ -11,14 +17,26 @@ main{
   margin: 0 auto 24px;
 }
 
+#my-name{
+  font-weight: normal;
+}
+
 main h2{
   font-weight: normal;
-  font-size: 1.375rem;
+  font-size: 1.1rem;
   text-align: center;
 }
 
-.software-engineer{
-  margin-top: 0.75rem;
+.landing-subtext-wrapper{
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.landing-subtext{
+  font-size: 1rem;
 }
 
 .overview-chevron{
@@ -132,4 +150,148 @@ main h2{
   height: 12px;
   width: 12px;
   background-color: #E0DFD5;
+}
+
+#under-construction-wrapper{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+#under-construction-icon{
+  display: block;
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  border-radius: 4px;
+  background-color: #FCE762;
+}
+
+#under-construction-wrapper span{
+  font-size: 0.875rem;
+}
+
+#landing-contact-links-wrapper{
+  margin: 24px auto 0;
+  width: fit-content;
+}
+
+.cv-link-wrapper{
+  margin: 24px auto 0;
+  width: fit-content;
+}
+
+#about-section{
+  margin-top: 24px;
+}
+
+#skills-section, #projects-section{
+  margin-top: 64px;
+}
+
+.mobile-section-header{
+  margin-bottom: 24px;
+}
+
+.skill-heading{
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.skill-liner-list{
+  display: flex;
+  align-items: center;
+  /* gap: 0.25rem; */
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.skill-liner-list span{
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.7);
+  padding-right: 0.6rem;
+  margin-right: 0.6rem;
+  border-right: 1.5px solid #FCE762;
+  display: block;
+  line-height: 1rem;
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+}
+
+.skill-liner-list span:last-child{
+  padding-right: 0;
+  margin-right: 0;
+  border-right: none;
+}
+
+.skill-groups-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-cards-wrapper{
+  margin-top: 1.5rem;
+}
+
+.project-card{
+  box-shadow: 2px 4px 10px 0 rgba(0,0,0,0.25);
+  border-radius: 8px;
+}
+
+.project-card-image{
+  display: block;
+  border-radius: 8px 8px 0 0;
+  max-width: 100%;
+}
+
+.project-card-body{
+  padding: 16px;
+}
+
+.project-card-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-card-title{
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.project-card-visit-site-icon{
+  width: 20px;
+  display: inline-block;
+}
+
+.project-card-subtitle{
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: normal;
+  line-height: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.project-card-technologies-wrapper{
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.project-card-technology-pill{
+  border: 1.5px solid #FCE762;
+  padding: 6px 12px;
+  display: inline-block;
+  border-radius: 14px;
+  color: #FCE762;
+  font-size: 0.625rem;
+}
+
+.project-card-learn-more{
+  margin-top: 1.5rem;
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 500;
 }

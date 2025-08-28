@@ -10,15 +10,29 @@ a{
 }
 
 body{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   background-color: #181C1D;
-  color: #FDFDFD;
+  color: #EEEEEE;
 }
 
 h1, h2, h3, h4, h5, h6, p, span, div, button, a {
   font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.mobile-container{
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+
+}
+
+.mobile-section-header{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.mobile-section-header .heading{
+  white-space: nowrap;
 }
 
 nav{
@@ -100,6 +114,19 @@ nav{
   left: 1px;
 }
 
+#rss-wrapper{
+  background-color: rgba(22, 26, 27, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
 .hamburger-icon{
   display: flex;
   flex-direction: column;
@@ -161,11 +188,76 @@ nav{
 }
 
 .nav-link{
-  padding: 8px 8px 24px;
-  margin-bottom: 24px;
+  padding: 8px;
+  margin-bottom: 8px;
   border-bottom: 1px solid rgba(252, 231, 98, 0.15)
 }
 
 .active-link{
   border-bottom: 1px solid rgba(252, 231, 98)
+}
+
+.heading{
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: calc(1rem * 0.1);
+  font-weight: 300;
+}
+
+.contact-links-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.contact-link-icon{
+  width: 20px;
+  display: inline-block;
+}
+
+.link{
+  color: #F06543;
+  text-decoration: none;
+  border-bottom: 1px solid #F06543;
+  padding-bottom: 1px;
+}
+
+.yellow-line{
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: #FCE762;
+}
+
+.paragraph{
+  line-height: 1.5rem;
+}
+
+#highlighted-span{
+  color: #FCE762;
+  font-weight: 500;
+}
+
+.paragraphs{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#main-footer{
+  margin-top: 64px;
+  padding: 24px;
+  background-color: #161A1B;
+}
+
+#icons8-notice{
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.7);
+  width: fit-content;
+  margin: 0 auto;
+}
+
+#icons8-notice a{
+  display: inline-block;
 }
