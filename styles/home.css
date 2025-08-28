@@ -190,7 +190,7 @@ main h2{
 }
 
 .mobile-section-header{
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .skill-heading{
@@ -201,7 +201,7 @@ main h2{
 .skill-liner-list{
   display: flex;
   align-items: center;
-  /* gap: 0.25rem; */
+  gap: 0.5rem;
   flex-wrap: wrap;
   margin-top: 0.75rem;
 }
@@ -210,19 +210,18 @@ main h2{
   font-size: 0.875rem;
   font-weight: normal;
   color: rgba(255, 255, 255, 0.7);
-  padding-left: 0.6rem;
-  margin-right: 0.6rem;
-  border-left: 1.5px solid #FCE762;
   display: block;
   line-height: 1rem;
-  padding-bottom: 1px;
   margin-bottom: 4px;
 }
 
-.skill-liner-list span:first-child{
-  padding-left: 0;
-  /* margin-left: 0; */
-  border-left: none;
+.skill-liner-separator{
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  display: block;
+  background-color: #FCE762;
+  margin-bottom: 2px;
 }
 
 .skill-groups-wrapper{
