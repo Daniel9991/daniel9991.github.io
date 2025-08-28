@@ -182,15 +182,15 @@ main h2{
 }
 
 #about-section{
-  margin-top: 24px;
+  margin-top: 48px;
 }
 
 #skills-section, #projects-section{
-  margin-top: 64px;
+  margin-top: 96px;
 }
 
 .mobile-section-header{
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 }
 
 .skill-heading{
@@ -210,19 +210,19 @@ main h2{
   font-size: 0.875rem;
   font-weight: normal;
   color: rgba(255, 255, 255, 0.7);
-  padding-right: 0.6rem;
+  padding-left: 0.6rem;
   margin-right: 0.6rem;
-  border-right: 1.5px solid #FCE762;
+  border-left: 1.5px solid #FCE762;
   display: block;
   line-height: 1rem;
   padding-bottom: 1px;
   margin-bottom: 4px;
 }
 
-.skill-liner-list span:last-child{
-  padding-right: 0;
-  margin-right: 0;
-  border-right: none;
+.skill-liner-list span:first-child{
+  padding-left: 0;
+  /* margin-left: 0; */
+  border-left: none;
 }
 
 .skill-groups-wrapper{

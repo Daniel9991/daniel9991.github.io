@@ -189,8 +189,12 @@ nav{
 
 .nav-link{
   padding: 8px;
-  margin-bottom: 8px;
-  border-bottom: 1px solid rgba(252, 231, 98, 0.15)
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(252, 231, 98, 0.15);
+}
+
+.heading.nav-link{
+  font-size: 1rem;
 }
 
 .active-link{
