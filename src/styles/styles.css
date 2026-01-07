@@ -155,11 +155,11 @@ nav{
   background-color: #FCE762
 }
 
-#hamburger-menu[open="true"]{
+#hamburger-menu[data-open="true"]{
   display: block;
 }
 
-#hamburger-menu[open="false"]{
+#hamburger-menu[data-open="false"]{
   display: none;
 }
 

@@ -5,11 +5,11 @@ const closedHamburgerIcon = document.querySelector("#closed-hamburger-icon")
 const openHamburgerIcon = document.querySelector("#open-hamburger-icon")
 
 function openHamburgerMenu(){
-  hamburgerMenu.setAttribute("open", "false")
+  hamburgerMenu.setAttribute("data-open", "false")
 }
 
 function closeHamburgerMenu(){
-  hamburgerMenu.setAttribute("open", "true")
+  hamburgerMenu.setAttribute("data-open", "true")
 }
 
 openHamburgerButton.addEventListener('click', openHamburgerMenu)

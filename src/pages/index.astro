@@ -1,10 +1,14 @@
+---
+import "../styles/styles.css"
+import "../styles/home.css"
+import meImg from "../assets/images/me.png"
+import tempusImg from "../assets/images/Tempus.png"
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="styles/home.css">
   <!-- CSS file to include serve fonts locally when developing offline -->
   <!-- <link rel="stylesheet" href="styles/font.css"> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +27,7 @@
             <div class="hamburger-line hamburger-long-line hamburger-orange-line"></div>
           </div>
         </button>
-        <section id="hamburger-menu" open="false">
+        <section id="hamburger-menu" data-open="false">
           <button id="open-hamburger-button" class="hamburger-button">
             <div id="open-hamburger-icon" class="hamburger-icon">
               <div class="hamburger-line hamburger-short-line hamburger-orange-line"></div>
@@ -42,26 +46,26 @@
         </section>
       </div>
       <div id="under-construction-wrapper">
-        <img id="under-construction-icon" src="assets/icons/construction-yellow.png" />
+        <img id="under-construction-icon" src="/icons/construction-yellow.png" />
         <span>Under Construction</span>
       </div>
     </nav>
     <main>
       <div>
-        <img id="my-image" src="assets/images/me.png" />
+        <img id="my-image" src={meImg.src} />
         <h2 id="my-name" class="heading">Daniel Fernandez</h2>
         <div id="landing-contact-links-wrapper" class="contact-links-wrapper">
           <a href="https://x.com/daniel_fdez99">
-            <img id="twitter-link-icon" class="contact-link-icon" src="assets/icons/twitter-orange.png" />
+            <img id="twitter-link-icon" class="contact-link-icon" src="/icons/twitter-orange.png" />
           </a>
           <a href="https://github.com/Daniel9991">
-            <img id="github-link-icon" class="contact-link-icon"  src="assets/icons/github-orange.png" />
+            <img id="github-link-icon" class="contact-link-icon"  src="/icons/github-orange.png" />
           </a>
           <a href="https://www.linkedin.com/in/danielfdez99/">
-            <img id="linkedin-link-icon" class="contact-link-icon"  src="assets/icons/linkedin-orange.png" />
+            <img id="linkedin-link-icon" class="contact-link-icon"  src="/icons/linkedin-orange.png" />
           </a>
           <a href="mailto:danny.fdez99@gmail.com">
-            <img id="mail-link-icon" class="contact-link-icon"  src="assets/icons/mail-orange.png" />
+            <img id="mail-link-icon" class="contact-link-icon"  src="/icons/mail-orange.png" />
           </a>
         </div>
         <div class="landing-subtext-wrapper">
@@ -69,7 +73,7 @@
           <h2 class="landing-subtext">2+ Years As Web Developer</h2>
         </div>
         <div class="cv-link-wrapper">
-          <a class="link" href="cv/DANIEL_FERNANDEZ_CV.pdf" download>
+          <a class="link" href="/cv/DANIEL_FERNANDEZ_CV.pdf" download>
             CV - EN
           </a>
         </div>
@@ -155,12 +159,12 @@
     </header>
     <div class="project-cards-wrapper">
       <article class="project-card">
-        <img src="assets/images/Tempus.png" alt="" class="project-card-image">
+        <img src={tempusImg.src} alt="" class="project-card-image">
         <section class="project-card-body">
           <header class="project-card-header">
             <h3 class="project-card-title">Tempus</h3>
             <a class="project-card-visit-site" target="_blank" href="https://daniel9991.github.io/tempus">
-              <img class="project-card-visit-site-icon" src="assets/icons/external-link-orange.png" alt="">
+              <img class="project-card-visit-site-icon" src="/icons/external-link-orange.png" alt="">
             </a>
           </header>
           <p class="project-card-subtitle">An online stopwatch and timer with a neumorphic design.</p>
@@ -180,6 +184,7 @@
       <a class="link" target="_blank" href="https://icons8.com">icons8</a>
     </p>
   </footer>
-  <script src="code/code.js"></script>
+  <script src="../scripts/code.js">
+  </script>
 </body>
 </html>
