@@ -1,0 +1,24 @@
+---
+const {skillName, skillList} = Astro.props
+
+// Intermixing skill items and separators
+const skillItems = skillList.map(
+  (skill: string, index: number) => [skill, index * 2]
+)
+
+const separators = Array.from({length: skillItems.length - 1}, (_, index) => ["*", index * 2 + 1])
+
+const allItems = [...skillItems, ...separators]
+  .toSorted((tuple1, tuple2) => tuple1[1] - tuple2[1])
+  .map(itemAndIndex => itemAndIndex[0])
+---
+<div>
+  <div class="skill-heading">{skillName}:</div>
+  <div class="skill-liner-list">
+    {allItems.map(value => value !== "*"
+      ? <span>{value}</span>
+      : <div class="skill-liner-separator" /> 
+      
+    )}
+  </div>
+</div>

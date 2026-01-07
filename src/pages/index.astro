@@ -3,13 +3,41 @@ import "../styles/styles.css"
 import "../styles/home.css"
 import meImg from "../assets/images/me.png"
 import tempusImg from "../assets/images/Tempus.png"
+import Header from "../components/Header.astro"
+import SkillSection from "../components/SkillSection.astro"
+import Footer from "../components/Footer.astro"
+
+const socialLinks = [
+  {
+    link: "https://x.com/daniel_fdez99",
+    iconSrc: "/icons/twitter-orange.png",
+    id: "twitter-link-icon"
+  },
+  {
+    link:"https://github.com/Daniel9991",
+    id:"github-link-icon",
+    iconSrc: "/icons/github-orange.png"
+  },
+  {
+    link:"https://www.linkedin.com/in/danielfdez99/",
+    id:"linkedin-link-icon",
+    iconSrc: "/icons/linkedin-orange.png"
+  },
+  {
+    link:"mailto:danny.fdez99@gmail.com",
+    id:"mail-link-icon",
+    iconSrc: "/icons/mail-orange.png"
+  }
+]
+
+
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- CSS file to include serve fonts locally when developing offline -->
+  <!-- CSS file to serve fonts locally when developing offline -->
   <!-- <link rel="stylesheet" href="styles/font.css"> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,55 +46,17 @@ import tempusImg from "../assets/images/Tempus.png"
 </head>
 <body>
   <div id="landing">
-    <nav>
-      <div id="hamburger-wrapper">
-        <button id="closed-hamburger-button" class="hamburger-button">
-          <div id="closed-hamburger-icon" class="hamburger-icon">
-            <div class="hamburger-line hamburger-long-line hamburger-orange-line"></div>
-            <div class="hamburger-line hamburger-short-line hamburger-yellow-line"></div>
-            <div class="hamburger-line hamburger-long-line hamburger-orange-line"></div>
-          </div>
-        </button>
-        <section id="hamburger-menu" data-open="false">
-          <button id="open-hamburger-button" class="hamburger-button">
-            <div id="open-hamburger-icon" class="hamburger-icon">
-              <div class="hamburger-line hamburger-short-line hamburger-orange-line"></div>
-              <div class="hamburger-line hamburger-long-line hamburger-yellow-line"></div>
-              <div class="hamburger-line hamburger-short-line hamburger-orange-line"></div>
-            </div>
-          </button>
-          <div id="nav-links-wrapper">
-            <p class="heading nav-link active-link">Home</p>
-            <p class="heading nav-link">Projects</p>
-            <p class="heading nav-link">Skills</p>
-            <p class="heading nav-link">Blog</p>
-            <p class="heading nav-link">About</p>
-            <!-- <a href="cv.html" class="nav-link">CV</a> -->
-          </div>
-        </section>
-      </div>
-      <div id="under-construction-wrapper">
-        <img id="under-construction-icon" src="/icons/construction-yellow.png" />
-        <span>Under Construction</span>
-      </div>
-    </nav>
+    <Header />
     <main>
       <div>
         <img id="my-image" src={meImg.src} />
         <h2 id="my-name" class="heading">Daniel Fernandez</h2>
         <div id="landing-contact-links-wrapper" class="contact-links-wrapper">
-          <a href="https://x.com/daniel_fdez99">
-            <img id="twitter-link-icon" class="contact-link-icon" src="/icons/twitter-orange.png" />
-          </a>
-          <a href="https://github.com/Daniel9991">
-            <img id="github-link-icon" class="contact-link-icon"  src="/icons/github-orange.png" />
-          </a>
-          <a href="https://www.linkedin.com/in/danielfdez99/">
-            <img id="linkedin-link-icon" class="contact-link-icon"  src="/icons/linkedin-orange.png" />
-          </a>
-          <a href="mailto:danny.fdez99@gmail.com">
-            <img id="mail-link-icon" class="contact-link-icon"  src="/icons/mail-orange.png" />
-          </a>
+          {socialLinks.map(social => (
+            <a href={social.link}>
+              <img id={social.id} class="contact-link-icon" src={social.iconSrc} />
+            </a>
+          ))}
         </div>
         <div class="landing-subtext-wrapper">
           <h2 class="landing-subtext">Software Engineer</h2>
@@ -96,60 +86,10 @@ import tempusImg from "../assets/images/Tempus.png"
       <div class="yellow-line"></div>
     </header>
     <div class="skill-groups-wrapper">
-      <div>
-        <div class="skill-heading">Programming Languages:</div>
-        <div class="skill-liner-list">
-          <span>JavaScript/Typescript</span>
-          <div class="skill-liner-separator"></div>
-          <span>CSS</span>
-          <div class="skill-liner-separator"></div>
-          <span>HTML</span>
-          <div class="skill-liner-separator"></div>
-          <span>Python</span>
-          <div class="skill-liner-separator"></div>
-          <span>Scala</span>
-        </div>
-      </div>
-      <div>
-        <div class="skill-heading">Frameworks and Technologies:</div>
-        <div class="skill-liner-list">
-          <span>React.js</span>
-          <div class="skill-liner-separator"></div>
-          <span>Next.js</span>
-          <div class="skill-liner-separator"></div>
-          <span>Express.js</span>
-          <div class="skill-liner-separator"></div>
-          <span>Flask</span>
-          <div class="skill-liner-separator"></div>
-          <span>tkinter</span>
-          <div class="skill-liner-separator"></div>
-          <span>Apache Spark</span>
-        </div>
-      </div>
-      <div>
-        <div class="skill-heading">Databases:</div>
-        <div class="skill-liner-list">
-          <span>PostgreSQL</span>
-          <div class="skill-liner-separator"></div>
-          <span>MySQL</span>
-          <div class="skill-liner-separator"></div>
-          <span>MongoDB</span>
-        </div>
-      </div>
-      <div>
-        <div class="skill-heading">Tools:</div>
-        <div class="skill-liner-list">
-          <span>Git/GitHub</span>
-          <div class="skill-liner-separator"></div>
-          <span>KNIME</span>
-          <div class="skill-liner-separator"></div>
-          <span>Postman</span>
-          <div class="skill-liner-separator"></div>
-          <span>pgAdmin</span>
-          <div class="skill-liner-separator"></div>
-          <span>Figma</span>
-        </div>
-      </div>
+      <SkillSection skillName="Programming Languages" skillList={["JavaScrip/TypeScript", "CSS", "HTML", "Python", "Scala"]} />
+      <SkillSection skillName="Frameworks and Technologies" skillList={["React.js", "Next.js", "Express.js", "Flask", "tkinter", "Apache Spark"]} />
+      <SkillSection skillName="Databases" skillList={["PostgreSQL", "MySQL", "MongoDB"]} />
+      <SkillSection skillName="Tools" skillList={["Git/GitHub", "pgAdmin", "Figma", "Postman", "KNIME"]} />
     </div>
   </section>
   <section class="section mobile-container" id="projects-section">
@@ -178,12 +118,7 @@ import tempusImg from "../assets/images/Tempus.png"
       </article>
     </div>
   </section>
-  <footer id="main-footer">
-    <p id="icons8-notice">
-      All icons are from
-      <a class="link" target="_blank" href="https://icons8.com">icons8</a>
-    </p>
-  </footer>
+  <Footer />
   <script src="../scripts/code.js">
   </script>
 </body>

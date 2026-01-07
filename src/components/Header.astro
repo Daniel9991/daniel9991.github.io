@@ -1,0 +1,33 @@
+---
+const navLinks = ["Home", "Projects", "Skills", "Blog", "About"]
+const activeLink = "Home"
+---
+<nav>
+  <div id="hamburger-wrapper">
+    <button id="closed-hamburger-button" class="hamburger-button">
+      <div id="closed-hamburger-icon" class="hamburger-icon">
+        <div class="hamburger-line hamburger-long-line hamburger-orange-line"></div>
+        <div class="hamburger-line hamburger-short-line hamburger-yellow-line"></div>
+        <div class="hamburger-line hamburger-long-line hamburger-orange-line"></div>
+      </div>
+    </button>
+    <section id="hamburger-menu" data-open="false">
+      <button id="open-hamburger-button" class="hamburger-button">
+        <div id="open-hamburger-icon" class="hamburger-icon">
+          <div class="hamburger-line hamburger-short-line hamburger-orange-line"></div>
+          <div class="hamburger-line hamburger-long-line hamburger-yellow-line"></div>
+          <div class="hamburger-line hamburger-short-line hamburger-orange-line"></div>
+        </div>
+      </button>
+      <div id="nav-links-wrapper">
+        {navLinks.map(link => (
+          <p class={`heading nav-link ${activeLink === link ? "active-link" : ""}`}>{link}</p>
+        ))}
+      </div>
+    </section>
+  </div>
+  <div id="under-construction-wrapper">
+    <img id="under-construction-icon" src="/icons/construction-yellow.png" />
+    <span>Under Construction</span>
+  </div>
+</nav>
