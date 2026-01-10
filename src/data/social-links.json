@@ -1,0 +1,22 @@
+[
+  {
+    "link": "https://x.com/daniel_fdez99",
+    "iconSrc": "/icons/twitter-orange.png",
+    "id": "twitter-link-icon"
+  },
+  {
+    "link":"https://github.com/Daniel9991",
+    "id":"github-link-icon",
+    "iconSrc": "/icons/github-orange.png"
+  },
+  {
+    "link":"https://www.linkedin.com/in/danielfdez99/",
+    "id":"linkedin-link-icon",
+    "iconSrc": "/icons/linkedin-orange.png"
+  },
+  {
+    "link":"mailto:danny.fdez99@gmail.com",
+    "id":"mail-link-icon",
+    "iconSrc": "/icons/mail-orange.png"
+  }
+]

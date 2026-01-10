@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ledesmas-cakes",
+    "name": "Ledesmas Cakes",
+    "url": "https://ledesmas-cakes.vercel.app",
+    "description": "Small bakery website to show products and get orders.",
+    "technologies": ["Next.js", "TailwindCSS", "Supabase"],
+    "imgName": "ledesmas-cakes.png"
+  },
+  {
+    "id": "tempus",
+    "name": "Tempus",
+    "url": "https://ledesmas-cakes.vercel.app",
+    "description": "An online stopwatch and timer with a neumorphic design.",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "imgName": "tempus.png"
+  }
+]

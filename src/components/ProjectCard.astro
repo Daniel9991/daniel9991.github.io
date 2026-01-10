@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  project: CollectionEntry<'projects'>['data'];
+  image: ImageMetadata;
+}
+
+const { project, image } = Astro.props
+---
+<article class="project-card">
+  <img src={image.src} alt="" class="project-card-image">
+  <section class="project-card-body">
+    <header class="project-card-header">
+      <h3 class="project-card-title">{project.name}</h3>
+      <a class="project-card-visit-site" target="_blank" href={project.url}>
+        <img class="project-card-visit-site-icon" src="/icons/external-link-orange.png" alt="">
+      </a>
+    </header>
+    <p class="project-card-subtitle">{project.description}</p>
+    <div class="project-card-technologies-wrapper">
+      {project.technologies.map(tech => (
+        <span class="project-card-technology-pill">{tech}</span>
+      ))}
+    </div>
+    <a class="link project-card-learn-more" href="">Learn More</a>
+  </section>
+</article>

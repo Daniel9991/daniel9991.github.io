@@ -1,36 +1,21 @@
 ---
+import { getCollection } from "astro:content"
+
 import "../styles/styles.css"
 import "../styles/home.css"
 import meImg from "../assets/images/me.png"
-import tempusImg from "../assets/images/Tempus.png"
 import Header from "../components/Header.astro"
 import SkillSection from "../components/SkillSection.astro"
 import Footer from "../components/Footer.astro"
+import ProjectCard from "../components/ProjectCard.astro"
 
-const socialLinks = [
-  {
-    link: "https://x.com/daniel_fdez99",
-    iconSrc: "/icons/twitter-orange.png",
-    id: "twitter-link-icon"
-  },
-  {
-    link:"https://github.com/Daniel9991",
-    id:"github-link-icon",
-    iconSrc: "/icons/github-orange.png"
-  },
-  {
-    link:"https://www.linkedin.com/in/danielfdez99/",
-    id:"linkedin-link-icon",
-    iconSrc: "/icons/linkedin-orange.png"
-  },
-  {
-    link:"mailto:danny.fdez99@gmail.com",
-    id:"mail-link-icon",
-    iconSrc: "/icons/mail-orange.png"
-  }
-]
+const projects = (await getCollection("projects")).map(element => element.data)
+const socialLinks = (await getCollection("socialLinks")).map(element => element.data)
 
-
+const images = import.meta.glob('../assets/images/projects/*', {
+  eager: true,
+  import: 'default',
+}) as Record<string, ImageMetadata>;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -98,24 +83,11 @@ const socialLinks = [
       <div class="yellow-line"></div>
     </header>
     <div class="project-cards-wrapper">
-      <article class="project-card">
-        <img src={tempusImg.src} alt="" class="project-card-image">
-        <section class="project-card-body">
-          <header class="project-card-header">
-            <h3 class="project-card-title">Tempus</h3>
-            <a class="project-card-visit-site" target="_blank" href="https://daniel9991.github.io/tempus">
-              <img class="project-card-visit-site-icon" src="/icons/external-link-orange.png" alt="">
-            </a>
-          </header>
-          <p class="project-card-subtitle">An online stopwatch and timer with a neumorphic design.</p>
-          <div class="project-card-technologies-wrapper">
-            <span class="project-card-technology-pill">HTML</span>
-            <span class="project-card-technology-pill">CSS</span>
-            <span class="project-card-technology-pill">JavaScript</span>
-          </div>
-          <a class="link project-card-learn-more" href="">Learn More</a>
-        </section>
-      </article>
+      {projects.map(project => {
+        const image = images[`../assets/images/projects/${project.imgName}`];
+
+        return <ProjectCard project={project} image={image} />
+      })}
     </div>
   </section>
   <Footer />
