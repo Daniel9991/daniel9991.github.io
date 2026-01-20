@@ -1,0 +1,34 @@
+---
+import Header from "./Header.astro"
+import meImg from "../assets/images/me.png"
+
+import { getCollection } from 'astro:content'
+
+const socialLinks = (await getCollection("socialLinks")).map(element => element.data)
+---
+<div id="landing">
+    <Header />
+    <main>
+      <div>
+        <img id="my-image" src={meImg.src} />
+        <h2 id="my-name" class="heading">Daniel Fernandez</h2>
+        <div id="landing-contact-links-wrapper" class="contact-links-wrapper">
+          {socialLinks.map(social => (
+            <a href={social.link}>
+              <img id={social.id} class="contact-link-icon" src={social.iconSrc} />
+            </a>
+          ))}
+        </div>
+        <div class="landing-subtext-wrapper">
+		<h2 class="landing-subtext">Software Engineer</h2>
+          <h2 class="landing-subtext">2+ Years as Web Developer</h2>
+        </div>
+        <div class="cv-link-wrapper">
+          <a class="link" href="/cv/DANIEL_FERNANDEZ_CV.pdf" download>
+            CV - EN
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+

@@ -232,6 +232,9 @@ main h2{
 
 .project-cards-wrapper{
   margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .project-card{

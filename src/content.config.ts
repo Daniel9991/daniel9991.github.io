@@ -2,7 +2,7 @@
 import { defineCollection } from 'astro:content';
 
 // 2. Import loader(s)
-import { file } from 'astro/loaders';
+import { glob, file } from 'astro/loaders';
 
 // 3. Import Zod
 import { z } from 'astro/zod';
@@ -29,5 +29,15 @@ const socialLinks = defineCollection({
   })
 });
 
+const blogs = defineCollection({
+    loader: glob({pattern: '**/[^_]*.md', base: "./src/blog"}),
+    schema: z.object({
+        title: z.string(),
+        pubDate: z.date(),
+        author: z.string(),
+    })
+    
+})
+
 // 5. Export a single `collections` object to register your collection(s)
-export const collections = { projects, socialLinks };
+export const collections = { projects, socialLinks, blogs };

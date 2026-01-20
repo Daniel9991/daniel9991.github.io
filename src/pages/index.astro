@@ -3,19 +3,12 @@ import { getCollection } from "astro:content"
 
 import "../styles/styles.css"
 import "../styles/home.css"
-import meImg from "../assets/images/me.png"
-import Header from "../components/Header.astro"
-import SkillSection from "../components/SkillSection.astro"
+import SkillsSection from "../components/SkillsSection.astro"
+import AboutMe from "../components/AboutMe.astro"
 import Footer from "../components/Footer.astro"
-import ProjectCard from "../components/ProjectCard.astro"
+import ProjectCardsSection from "../components/ProjectCardsSection.astro"
+import Landing from "../components/Landing.astro"
 
-const projects = (await getCollection("projects")).map(element => element.data)
-const socialLinks = (await getCollection("socialLinks")).map(element => element.data)
-
-const images = import.meta.glob('../assets/images/projects/*', {
-  eager: true,
-  import: 'default',
-}) as Record<string, ImageMetadata>;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -30,68 +23,11 @@ const images = import.meta.glob('../assets/images/projects/*', {
   <title>Daniel Fernandez</title>
 </head>
 <body>
-  <div id="landing">
-    <Header />
-    <main>
-      <div>
-        <img id="my-image" src={meImg.src} />
-        <h2 id="my-name" class="heading">Daniel Fernandez</h2>
-        <div id="landing-contact-links-wrapper" class="contact-links-wrapper">
-          {socialLinks.map(social => (
-            <a href={social.link}>
-              <img id={social.id} class="contact-link-icon" src={social.iconSrc} />
-            </a>
-          ))}
-        </div>
-        <div class="landing-subtext-wrapper">
-          <h2 class="landing-subtext">Software Engineer</h2>
-          <h2 class="landing-subtext">2+ Years as Web Developer</h2>
-        </div>
-        <div class="cv-link-wrapper">
-          <a class="link" href="/cv/DANIEL_FERNANDEZ_CV.pdf" download>
-            CV - EN
-          </a>
-        </div>
-      </div>
-    </main>
-  </div>
-  <section class="section mobile-container" id="about-section">
-    <header class="mobile-section-header">
-      <h2 class="heading">ABOUT ME</h2>
-      <div class="yellow-line"></div>
-    </header>
-    <div class="paragraphs">
-      <p class="paragraph">My name is Daniel Fernandez. I'm a software engineer from Cuba with over two years of experience in web development. I enjoy creating practical, user-friendly products and working across the full stack, with an emphasis on usability, clean design, and maintainable code.</p>
-      <p class="paragraph">Even though I have a degree in software engineering, I consider myself self-taught. Halfway through my degree I started exploring various languages and tools by watching tutorials, reading books and just building and breaking things. This helped me land my first gigs while still in university. That drive to learn and explore new technologies still accompanies me as I search for new growth opportunities.</p>
-    </div>
-  </section>
-  <section class="section mobile-container" id="skills-section">
-    <header class="mobile-section-header">
-      <h2 class="heading">SKILLS</h2>
-      <div class="yellow-line"></div>
-    </header>
-    <div class="skill-groups-wrapper">
-      <SkillSection skillName="Programming Languages" skillList={["JavaScrip/TypeScript", "CSS", "HTML", "Python", "Scala"]} />
-      <SkillSection skillName="Frameworks and Technologies" skillList={["React.js", "Next.js", "Express.js", "Flask", "tkinter", "Apache Spark"]} />
-      <SkillSection skillName="Databases" skillList={["PostgreSQL", "MySQL", "MongoDB"]} />
-      <SkillSection skillName="Tools" skillList={["Git/GitHub", "pgAdmin", "Figma", "Postman", "KNIME"]} />
-    </div>
-  </section>
-  <section class="section mobile-container" id="projects-section">
-    <header class="mobile-section-header">
-      <h2 class="heading">PROJECTS</h2>
-      <div class="yellow-line"></div>
-    </header>
-    <div class="project-cards-wrapper">
-      {projects.map(project => {
-        const image = images[`../assets/images/projects/${project.imgName}`];
-
-        return <ProjectCard project={project} image={image} />
-      })}
-    </div>
-  </section>
-  <Footer />
-  <script src="../scripts/code.js">
-  </script>
+    <Landing />
+    <AboutMe />
+    <SkillsSection />
+    <ProjectCardsSection />
+    <Footer />
+  <script src="../scripts/code.js" />
 </body>
 </html>

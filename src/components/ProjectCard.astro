@@ -23,6 +23,6 @@ const { project, image } = Astro.props
         <span class="project-card-technology-pill">{tech}</span>
       ))}
     </div>
-    <a class="link project-card-learn-more" href="">Learn More</a>
+    <a class="link project-card-learn-more" href={`/projects/${project.id}`}>Learn More</a>
   </section>
 </article>

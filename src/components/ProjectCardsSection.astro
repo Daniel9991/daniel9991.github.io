@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content'
+import ProjectCard from "./ProjectCard.astro"
+
+const projects = (await getCollection("projects")).map(element => element.data)
+
+const images = import.meta.glob('../assets/images/projects/*', {
+  eager: true,
+  import: 'default',
+}) as Record<string, ImageMetadata>;
+---
+<section class="section mobile-container" id="projects-section">
+    <header class="mobile-section-header">
+      <h2 class="heading">PROJECTS</h2>
+      <div class="yellow-line"></div>
+    </header>
+    <div class="project-cards-wrapper">
+      {projects.map(project => {
+        const image = images[`../assets/images/projects/${project.imgName}`];
+
+        return <ProjectCard project={project} image={image} />
+      })}
+    </div>
+  </section>
+
