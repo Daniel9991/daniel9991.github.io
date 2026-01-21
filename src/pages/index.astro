@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content"
 
-import "../styles/styles.css"
 import "../styles/home.css"
+import BaseLayout from "../layouts/BaseLayout.astro"
 import SkillsSection from "../components/SkillsSection.astro"
 import AboutMe from "../components/AboutMe.astro"
 import Footer from "../components/Footer.astro"
@@ -10,24 +10,11 @@ import ProjectCardsSection from "../components/ProjectCardsSection.astro"
 import Landing from "../components/Landing.astro"
 
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- CSS file to serve fonts locally when developing offline -->
-  <!-- <link rel="stylesheet" href="styles/font.css"> -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <title>Daniel Fernandez</title>
-</head>
-<body>
-    <Landing />
-    <AboutMe />
-    <SkillsSection />
-    <ProjectCardsSection />
-    <Footer />
+<BaseLayout>
+  <Landing />
+  <AboutMe />
+  <SkillsSection />
+  <ProjectCardsSection />
+  <Footer />
   <script src="../scripts/code.js" />
-</body>
-</html>
+</BaseLayout>
