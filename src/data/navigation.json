@@ -8,5 +8,10 @@
     "id": "projects",
     "text": "Projects",
     "url": "/projects" 
+  },
+  {
+    "id": "blog",
+    "text": "Blog",
+    "url": "/blog" 
   }
 ]

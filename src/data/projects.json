@@ -17,6 +17,10 @@
     "url": "https://daniel9991.github.io/tempus",
     "description": "An online stopwatch and timer with a neumorphic design.",
     "technologies": ["HTML", "CSS", "JavaScript"],
-    "imgName": "tempus.png"
+    "imgName": "tempus.png",
+    "overview": [
+      "Tempus is a stopwatch/timer built using HTML, CSS and vanilla JavaScript. It provides basic functionality without the need to sign up/log in.",
+      "The main reason for building this project was using neumorphic design."
+    ]
   }
 ]
