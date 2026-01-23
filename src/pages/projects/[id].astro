@@ -1,14 +1,102 @@
 ---
 import { getCollection } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths(){
-    const projects = await getCollection('projects')
-    return projects.map(project => ({
-        params: { id: project.id }, props: { project }
-    }))
+  const images = import.meta.glob('../../assets/images/projects/*', {
+    eager: true,
+    import: 'default',
+  }) as Record<string, ImageMetadata>;  
+  const projects = await getCollection('projects')
+  
+  return projects.map(project => {
+    const image = images[`../../assets/images/projects/${project.data.imgName}`];
+
+    return {
+      params: { id: project.id }, props: { project: project.data, image }
+    }
+  })
 }
 
-const { project } = Astro.props;
-console.log(Astro.props)
+const { project, image } = Astro.props;
 ---
-<p>{project.data.name}
+<BaseLayout>
+  <main>
+    <div class="project-name-wrapper">
+      <h2 class="project-name">{project.name}</h2>
+      <a class="link" target="_blank" href={project.url}>Visit Site</a>
+    </div>
+    <p class="project-description">{project.description}</p>
+    <img src={image.src} />
+    <div class="content-wrapper">
+      <h3 class="built-with-heading">Built with:</h3>
+      <div class="technology-pills-wrapper">
+        {project.technologies.map(tech => (
+          <span class="technology-pill">{tech}</span>
+        ))}
+      </div>
+      {project.overview && project.overview.length > 0
+        ? (
+          <h3 class="overview-heading">Overview</h3>
+          <div>
+            {project.overview.map(paragraph => (
+              <p class="overview-paragraph">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        ) : null
+      }
+    </div>
+  </main>
+</BaseLayout>
+<style>
+  .overview-paragraph{
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-top: 16px;
+  }
+  .overview-heading{
+    margin-top: 24px;
+    font-weight: normal
+  }
+  .technology-pills-wrapper{
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  .content-wrapper{
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .built-with-heading{
+    font-weight: 400;
+    margin-top: 24px;
+  }
+  img{
+    display: block;
+    max-width: 100%;
+    margin-top: 24px;
+  }
+  .project-name-wrapper{
+    padding: 64px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .project-name{
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  .project-description{
+    margin-top: 16px;
+    padding: 0 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: rgba(255,255,255,0.7);
+  }
+</style>

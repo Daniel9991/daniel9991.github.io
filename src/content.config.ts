@@ -16,7 +16,8 @@ const projects = defineCollection({
     id: z.string(),
     url: z.string().url(),
     technologies: z.array(z.string()),
-    imgName: z.string()
+    imgName: z.string(),
+    overview: z.array(z.string()).or(z.undefined())
   })
 });
 
@@ -39,5 +40,14 @@ const blogs = defineCollection({
     
 })
 
+const navigation = defineCollection({
+  loader: file("src/data/navigation.json"),
+  schema: z.object({
+    id: z.string(),
+    text: z.string(),
+    url: z.string()
+  })
+});
+
 // 5. Export a single `collections` object to register your collection(s)
-export const collections = { projects, socialLinks, blogs };
+export const collections = { navigation, projects, socialLinks, blogs };

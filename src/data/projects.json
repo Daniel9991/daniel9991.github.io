@@ -5,12 +5,16 @@
     "url": "https://ledesmas-cakes.vercel.app",
     "description": "Small bakery website to show products and get orders.",
     "technologies": ["Next.js", "TailwindCSS", "Supabase"],
-    "imgName": "ledesmas-cakes.png"
+    "imgName": "ledesmas-cakes.png",
+    "overview": [
+      "This is the website for a small delivery-first bakery. Its main purpose is to show users the available products with their price, images and maybe a description. Another feature is letting users pick products and submitting their 'cart' to the bakery through a template Whatsapp message.",
+      "The website was developed with Next.js App router. It leverages Server and Client components to combine server rendering with client side interactivity when required. A Zustand store (accesible by a context provider) handles some global state related to the products and the cart."
+    ]
   },
   {
     "id": "tempus",
     "name": "Tempus",
-    "url": "https://ledesmas-cakes.vercel.app",
+    "url": "https://daniel9991.github.io/tempus",
     "description": "An online stopwatch and timer with a neumorphic design.",
     "technologies": ["HTML", "CSS", "JavaScript"],
     "imgName": "tempus.png"

@@ -1,5 +1,6 @@
 #landing{
-  min-height: 100svh;
+  padding-top: 96px;
+  padding-bottom: 96px;
   display: flex;
   flex-direction: column;
 }
@@ -152,25 +153,6 @@ main h2{
   background-color: #E0DFD5;
 }
 
-#under-construction-wrapper{
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-#under-construction-icon{
-  display: block;
-  width: 24px;
-  height: 24px;
-  padding: 2px;
-  border-radius: 4px;
-  background-color: #FCE762;
-}
-
-#under-construction-wrapper span{
-  font-size: 0.875rem;
-}
-
 #landing-contact-links-wrapper{
   margin: 24px auto 0;
   width: fit-content;
@@ -235,65 +217,4 @@ main h2{
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-}
-
-.project-card{
-  box-shadow: 2px 4px 10px 0 rgba(0,0,0,0.25);
-  border-radius: 8px;
-}
-
-.project-card-image{
-  display: block;
-  border-radius: 8px 8px 0 0;
-  max-width: 100%;
-}
-
-.project-card-body{
-  padding: 16px;
-}
-
-.project-card-header{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.project-card-title{
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.project-card-visit-site-icon{
-  width: 20px;
-  display: inline-block;
-}
-
-.project-card-subtitle{
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: normal;
-  line-height: 1.5rem;
-  margin-top: 0.5rem;
-}
-
-.project-card-technologies-wrapper{
-  margin-top: 1rem;
-  display: flex;
-  gap: 0.5rem;
-}
-
-.project-card-technology-pill{
-  border: 1.5px solid #FCE762;
-  padding: 6px 12px;
-  display: inline-block;
-  border-radius: 14px;
-  color: #FCE762;
-  font-size: 0.625rem;
-}
-
-.project-card-learn-more{
-  margin-top: 1.5rem;
-  display: inline-block;
-  font-size: 0.875rem;
-  font-weight: 500;
 }

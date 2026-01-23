@@ -1,0 +1,34 @@
+---
+import {getCollection} from 'astro:content'
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectCard from '../../components/ProjectCard.astro';
+const projects = (await getCollection('projects')).map(project => project.data)
+const images = import.meta.glob('../../assets/images/projects/*', {
+  eager: true,
+  import: 'default',
+}) as Record<string, ImageMetadata>;
+---
+
+<BaseLayout>
+  <ul class="project-cards-wrapper">
+    {projects.map(project => {
+      const image = images[`../../assets/images/projects/${project.imgName}`];
+
+      return (
+        <li>
+          <ProjectCard project={project} image={image} />
+        </li>
+    )})}
+  </ul>
+</BaseLayout>
+<style>
+  .project-cards-wrapper{
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 24px;
+    padding-right: 24px;
+    list-style-type: none;
+  }
+</style>

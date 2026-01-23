@@ -1,4 +1,6 @@
 ---
+import Footer from "../components/Footer.astro"
+import Header from "../components/Header.astro"
 import "../styles/styles.css"
 ---
 <!DOCTYPE html>
@@ -14,6 +16,10 @@ import "../styles/styles.css"
   <title>Daniel Fernandez</title>
 </head>
 <body>
-  <slot />
+  <div>
+    <Header />
+    <slot />
+  </div>
+  <Footer />
 </body>
 </html>

@@ -12,6 +12,10 @@ a{
 body{
   background-color: #181C1D;
   color: #EEEEEE;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 h1, h2, h3, h4, h5, h6, p, span, div, button, a {
@@ -187,6 +191,25 @@ nav{
   align-items: center;
 }
 
+#under-construction-wrapper{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+#under-construction-icon{
+  display: block;
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  border-radius: 4px;
+  background-color: #FCE762;
+}
+
+#under-construction-wrapper span{
+  font-size: 0.875rem;
+}
+
 .nav-link{
   padding: 8px;
   margin-bottom: 16px;
@@ -264,4 +287,13 @@ nav{
 
 #icons8-notice a{
   display: inline-block;
+}
+
+.technology-pill{
+  border: 1.5px solid #FCE762;
+  padding: 6px 12px;
+  display: inline-block;
+  border-radius: 14px;
+  color: #FCE762;
+  font-size: 0.625rem;
 }

@@ -1,6 +1,6 @@
 ---
-const navLinks = ["Home", "Projects", "Skills", "Blog", "About"]
-const activeLink = "Home"
+import {getCollection} from "astro:content"
+const navLinks = (await getCollection('navigation')).map(nav => nav.data)
 ---
 <nav>
   <div id="hamburger-wrapper">
@@ -21,7 +21,8 @@ const activeLink = "Home"
       </button>
       <div id="nav-links-wrapper">
         {navLinks.map(link => (
-          <p class={`heading nav-link ${activeLink === link ? "active-link" : ""}`}>{link}</p>
+          <a href={link.url} class={`heading nav-link`}>{link.text}</a>
+          //<a href={``} class={`heading nav-link ${activeLink === link ? "active-link" : ""}`}>{link}</a>
         ))}
       </div>
     </section>
@@ -31,3 +32,4 @@ const activeLink = "Home"
     <span>Under Construction</span>
   </div>
 </nav>
+<script src="../scripts/code.js" />
