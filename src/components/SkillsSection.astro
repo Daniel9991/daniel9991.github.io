@@ -1,16 +1,17 @@
 ---
+import Container from "./Container.astro"
+import Heading from "./Heading.astro"
 import SkillSublist from "./SkillSublist.astro"
 ---
-<section class="section mobile-container" id="skills-section">
-    <header class="mobile-section-header">
-      <h2 class="heading">SKILLS</h2>
-      <div class="yellow-line"></div>
-    </header>
-    <div class="skill-groups-wrapper">
-      <SkillSublist skillName="Programming Languages" skillList={["JavaScrip/TypeScript", "CSS", "HTML", "Python", "Scala"]} />
-      <SkillSublist skillName="Frameworks and Technologies" skillList={["React.js", "Next.js", "Express.js", "Flask", "tkinter", "Apache Spark"]} />
-      <SkillSublist skillName="Databases" skillList={["PostgreSQL", "MySQL", "MongoDB"]} />
-      <SkillSublist skillName="Tools" skillList={["Git/GitHub", "pgAdmin", "Figma", "Postman", "KNIME"]} />
-    </div>
+<section class="pt-[96px] lg:bg-linear-to-b from-almost-black to-bg" id="skills-section">
+  <Container>
+    <Heading content="SKILLS" />
+      <div class="skill-groups-wrapper">
+        <SkillSublist skillName="Programming Languages" skillList={["JavaScrip/TypeScript", "CSS", "HTML", "Python", "Scala"]} />
+        <SkillSublist skillName="Frameworks and Technologies" skillList={["React.js", "Next.js", "Express.js", "Flask", "tkinter", "Apache Spark"]} />
+        <SkillSublist skillName="Databases" skillList={["PostgreSQL", "MySQL", "MongoDB"]} />
+        <SkillSublist skillName="Tools" skillList={["Git/GitHub", "pgAdmin", "Figma", "Postman", "KNIME"]} />
+      </div>
+  </Container>  
 </section>
 

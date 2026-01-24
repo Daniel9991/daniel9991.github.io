@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content'
 import ProjectCard from "./ProjectCard.astro"
+import Container from './Container.astro';
+import Heading from './Heading.astro';
 
 const projects = (await getCollection("projects")).map(element => element.data)
 
@@ -9,17 +11,16 @@ const images = import.meta.glob('../assets/images/projects/*', {
   import: 'default',
 }) as Record<string, ImageMetadata>;
 ---
-<section class="section mobile-container" id="projects-section">
-    <header class="mobile-section-header">
-      <h2 class="heading">PROJECTS</h2>
-      <div class="yellow-line"></div>
-    </header>
-    <div class="project-cards-wrapper">
+<section class="mt-[96px]">
+  <Container>
+    <Heading content="PROJECTS" />
+    <div class="">
       {projects.map(project => {
         const image = images[`../assets/images/projects/${project.imgName}`];
 
-        return <ProjectCard project={project} image={image} />
-      })}
+        return <ProjectCard project={project} image={image} /> 
+       })} 
     </div>
-  </section>
+  </Container>  
+</section>
 

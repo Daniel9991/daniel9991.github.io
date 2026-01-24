@@ -1,21 +1,7 @@
-#landing{
-  padding-top: 96px;
-  padding-bottom: 96px;
-  display: flex;
-  flex-direction: column;
-}
-
 main{
   flex-grow: 1;
   display: grid;
   place-content: center;
-}
-
-#my-image{
-  display: block;
-  width: 150px;
-  border-radius: 50%;
-  margin: 0 auto 24px;
 }
 
 #my-name{
@@ -161,18 +147,6 @@ main h2{
 .cv-link-wrapper{
   margin: 24px auto 0;
   width: fit-content;
-}
-
-#about-section{
-  margin-top: 48px;
-}
-
-#skills-section, #projects-section{
-  margin-top: 96px;
-}
-
-.mobile-section-header{
-  margin-bottom: 32px;
 }
 
 .skill-heading{

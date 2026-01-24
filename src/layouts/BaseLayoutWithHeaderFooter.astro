@@ -1,0 +1,12 @@
+---
+import Footer from "../components/Footer.astro"
+import Header from "../components/Header.astro"
+import BaseLayout from "./BaseLayout.astro"
+---
+<BaseLayout>
+  <div>
+    <Header />
+    <slot />
+  </div>
+  <Footer />
+</BaseLayout>  

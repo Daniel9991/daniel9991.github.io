@@ -2,13 +2,15 @@
 import meImg from "../assets/images/me.png"
 
 import { getCollection } from 'astro:content'
+import Header from "./Header.astro"
 
 const socialLinks = (await getCollection("socialLinks")).map(element => element.data)
 ---
-<div id="landing">
-  <main>
-    <div>
-      <img id="my-image" src={meImg.src} />
+<div id="landing" class="lg:min-h-[100svh] flex flex-col to-70% bg-size-[closest-side] lg:bg-radial from-bg to-[#121212]">
+  <Header />
+  <main class="py-[96px]">
+    <div class="md:hidden">
+      <img class="block w-[150px] rounded-full mx-auto lg:mx-0 mb-[24px] lg:mb-0" src={meImg.src} />
       <h2 id="my-name" class="heading">Daniel Fernandez</h2>
       <div id="landing-contact-links-wrapper" class="contact-links-wrapper">
         {socialLinks.map(social => (
@@ -25,6 +27,25 @@ const socialLinks = (await getCollection("socialLinks")).map(element => element.
         <a class="link" href="/cv/DANIEL_FERNANDEZ_CV.pdf" download>
           CV - EN
         </a>
+      </div>
+    </div>
+    <div class="hidden md:flex items-center gap-[32px] ">
+      <img class="block w-[150px] rounded-full mb-[24px] lg:mb-0" src={meImg.src} />
+      <div class="flex flex-col max-w-[400px]">
+        <h4 style="color: white;" class="heading">Daniel Fernandez</h4>
+        <p class="mt-[12px] leading-[1.5rem] text-transparent-white">Hey, I’m a software engineer. I’m passionate about building valuable products and solving business problems through technical solutions.</p>
+        <div class="mt-[24px] flex gap-[32px] flex-wrap items-center justify-between">
+          <div class="flex items-center gap-[24px]">
+            {socialLinks.map(social => (
+              <a href={social.link}>
+                <img id={social.id} class="contact-link-icon" src={social.iconSrc} />
+              </a>
+            ))}
+          </div>
+          <a class="link" href="/cv/DANIEL_FERNANDEZ_CV.pdf" download>
+            CV - EN
+          </a>
+        </div>  
       </div>
     </div>
   </main>
