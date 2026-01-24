@@ -8,8 +8,16 @@ import Landing from "../components/Landing.astro"
 
 ---
 <BaseLayout>
-  <Landing />
-  <AboutMe />
-  <SkillsSection />
-  <ProjectCardsSection />
+  <div class="container">
+    <Landing />
+    <AboutMe />
+    <SkillsSection />
+    <ProjectCardsSection />
+  </div>
 </BaseLayout>
+<style>
+  .container{
+    max-width: 600px;
+    margin: 0 auto;
+  }
+</style>

@@ -4,6 +4,25 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 const allPosts = await getCollection('blogs')
 ---
 <BaseLayout>
-  <p>C'est mon blog</p>
-  {allPosts.map(post => <a href={`/blog/posts/${post.id}`}>{post.data.title}</a>)}
+  <div class="container">
+    <p>Bienvenue a mon blog, Ici, je montre les choses que je apprendre chaque jour.</p>
+    <ul class="posts-list">
+      {allPosts.map(post => <a class="link" href={`/blog/${post.id}`}>{post.data.title}</a>)}
+    </ul>
+  </div>
 </BaseLayout>
+<style>
+  .posts-list a{
+    width: fit-content;
+  }
+  .posts-list{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style-type: none;
+  }
+  .container{
+    padding: 0 24px;
+  }
+</style>
