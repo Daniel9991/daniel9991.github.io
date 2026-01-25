@@ -21,7 +21,7 @@ const navLinks = (await getCollection('navigation')).map(nav => nav.data)
             <div class="hamburger-line hamburger-short-line hamburger-orange-line"></div>
           </div>
         </button>
-        <div id="nav-links-wrapper">
+        <div id="nav-links-wrapper" class="gap-[16px]">
           {navLinks.map(link => (
             <a href={link.url} class={`heading nav-link`}>{link.text}</a>
           ))}

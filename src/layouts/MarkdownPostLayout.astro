@@ -1,10 +1,11 @@
 ---
 import BaseLayout from "./BaseLayout.astro"
+import BaseLayoutWithHeaderFooter from "./BaseLayoutWithHeaderFooter.astro"
 
 const { frontmatter } = Astro.props
 ---
-<BaseLayout>
-  <div class="container">
+<BaseLayoutWithHeaderFooter>
+  <div class="container mt-[64px]">
     <header class="post-header">
       <h2 class="post-title">{frontmatter.title}</h2>
       <div class="post-header-secondary-info">
@@ -15,7 +16,7 @@ const { frontmatter } = Astro.props
       <slot />
     </div>
   </div>
-</BaseLayout>
+</BaseLayoutWithHeaderFooter>
 <style>
   .post-body{
     max-width: 700px;

@@ -1,16 +1,17 @@
 ---
 import { getCollection } from 'astro:content'
-import BaseLayout from '../../layouts/BaseLayout.astro'
+import BaseLayoutWithHeaderFooter from '../../layouts/BaseLayoutWithHeaderFooter.astro'
+import Container from '../../components/Container.astro'
 const allPosts = await getCollection('blogs')
 ---
-<BaseLayout>
-  <div class="container">
-    <p>Bienvenue a mon blog, Ici, je montre les choses que je apprendre chaque jour.</p>
+<BaseLayoutWithHeaderFooter>
+  <Container>
+    <p class="mt-[64px]">Bienvenue a mon blog, Ici, je montre les choses que je apprendre chaque jour.</p>
     <ul class="posts-list">
       {allPosts.map(post => <a class="link" href={`/blog/${post.id}`}>{post.data.title}</a>)}
     </ul>
-  </div>
-</BaseLayout>
+  </Container>
+</BaseLayoutWithHeaderFooter>
 <style>
   .posts-list a{
     width: fit-content;

@@ -21,6 +21,7 @@
   --color-almost-black: #121212;
   --color-accent-yellow: #FCE762;
   --color-accent-orange: #F06543;
+  --color-footer-bg: #161a1b;
 }
 
 body{
@@ -130,7 +131,7 @@ nav{
 }
 
 #nav-links-wrapper{
-  padding: 16px 24px 0;
+  padding: 16px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -215,7 +216,7 @@ nav{
 #main-footer{
   margin-top: 64px;
   padding: 24px;
-  background-color: #161A1B;
+  background-color: theme('colors.footer-bg');
 }
 
 #icons8-notice{

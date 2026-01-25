@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayoutWithHeaderFooter from '../../layouts/BaseLayoutWithHeaderFooter.astro';
+import Container from '../../components/Container.astro';
 
 export async function getStaticPaths(){
   const images = import.meta.glob('../../assets/images/projects/*', {
@@ -20,36 +22,39 @@ export async function getStaticPaths(){
 
 const { project, image } = Astro.props;
 ---
-<BaseLayout>
-  <main>
-    <div class="project-name-wrapper">
-      <h2 class="project-name">{project.name}</h2>
-      <a class="link" target="_blank" href={project.url}>Visit Site</a>
-    </div>
-    <p class="project-description">{project.description}</p>
-    <img src={image.src} />
-    <div class="content-wrapper">
-      <h3 class="built-with-heading">Built with:</h3>
-      <div class="technology-pills-wrapper">
-        {project.technologies.map(tech => (
-          <span class="technology-pill">{tech}</span>
-        ))}
+<BaseLayoutWithHeaderFooter>
+  <Container>
+
+    <main>
+      <div class="project-name-wrapper">
+        <h2 class="project-name">{project.name}</h2>
+        <a class="link" target="_blank" href={project.url}>Visit Site</a>
       </div>
-      {project.overview && project.overview.length > 0
-        ? (
-          <h3 class="overview-heading">Overview</h3>
-          <div>
-            {project.overview.map(paragraph => (
-              <p class="overview-paragraph">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        ) : null
-      }
-    </div>
-  </main>
-</BaseLayout>
+      <p class="project-description">{project.description}</p>
+      <img src={image.src} />
+      <div class="content-wrapper">
+        <h3 class="built-with-heading">Built with:</h3>
+        <div class="technology-pills-wrapper">
+          {project.technologies.map(tech => (
+            <span class="technology-pill">{tech}</span>
+          ))}
+        </div>
+        {project.overview && project.overview.length > 0
+          ? (
+            <h3 class="overview-heading">Overview</h3>
+            <div>
+              {project.overview.map(paragraph => (
+                <p class="overview-paragraph">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          ) : null
+        }
+      </div>
+    </main>
+  </Container>
+</BaseLayoutWithHeaderFooter>
 <style>
   .overview-paragraph{
     color: rgba(255,255,255,0.7);
@@ -67,10 +72,6 @@ const { project, image } = Astro.props;
     flex-wrap: wrap;
     margin-top: 16px;
   }
-  .content-wrapper{
-    padding-left: 24px;
-    padding-right: 24px;
-  }
   .built-with-heading{
     font-weight: 400;
     margin-top: 24px;
@@ -81,7 +82,7 @@ const { project, image } = Astro.props;
     margin-top: 24px;
   }
   .project-name-wrapper{
-    padding: 64px 24px 0;
+    padding-top: 64px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -94,7 +95,6 @@ const { project, image } = Astro.props;
   }
   .project-description{
     margin-top: 16px;
-    padding: 0 24px;
     font-size: 1rem;
     line-height: 1.5rem;
     color: rgba(255,255,255,0.7);

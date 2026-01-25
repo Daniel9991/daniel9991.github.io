@@ -1,0 +1,14 @@
+---
+const {skillName, skillList} = Astro.props
+---
+<div>
+  <div class="skill-heading mb-[16px]">{skillName}:</div>
+  <ul class="flex flex-col gap-[8px]">
+    {skillList.map((skill: string) => (
+      <li class="flex gap-[8px] items-center">
+        <span class="block w-[6px] h-[6px] rounded-full bg-accent-yellow" />
+        <p class="text-white/70">{skill}</p>
+      </li>
+    ))}
+  </ul>
+</div>

@@ -3,7 +3,7 @@
     "id": "ledesmas-cakes",
     "name": "Ledesmas Cakes",
     "url": "https://ledesmas-cakes.vercel.app",
-    "description": "Small bakery website to show products and get orders.",
+    "description": "Freelance website for a small bakery to show products and collect orders.",
     "technologies": ["Next.js", "TailwindCSS", "Supabase"],
     "imgName": "ledesmas-cakes.png",
     "overview": [
