@@ -1,8 +1,22 @@
 ---
+function normalize(path: string): string {
+  return path === '/'
+    ? '/'
+    : path.replace(/\/$/, '');
+}
+
 const { pathname } = Astro.url
+const current = normalize(pathname)
+
 import {getCollection} from "astro:content"
 import Container from "./Container.astro"
-const navLinks = (await getCollection('navigation')).map(nav => ({...nav.data, isActive: pathname === nav.data.url}))
+const navLinks = (await getCollection('navigation')).map(nav => (
+  {
+    ...nav.data,
+    isActive: current === normalize(nav.data.url) ||
+    current.startsWith(`${normalize(nav.data.url)}/`)
+  }
+))
 ---
 <Container>
   <nav>
