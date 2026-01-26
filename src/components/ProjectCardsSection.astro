@@ -16,7 +16,7 @@ const images = import.meta.glob('../assets/images/projects/*', {
     <div class="mb-[32px]">
       <Heading content="PROJECTS" />
     </div>
-    <div class="flex flex-col gap-[32px]">
+    <div class="flex flex-col gap-[32px] md:grid grid-cols-2">
       {projects.map(project => {
         const image = images[`../assets/images/projects/${project.imgName}`];
 

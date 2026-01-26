@@ -1,7 +1,8 @@
 ---
+const { pathname } = Astro.url
 import {getCollection} from "astro:content"
 import Container from "./Container.astro"
-const navLinks = (await getCollection('navigation')).map(nav => nav.data)
+const navLinks = (await getCollection('navigation')).map(nav => ({...nav.data, isActive: pathname === nav.data.url}))
 ---
 <Container>
   <nav>
@@ -23,15 +24,15 @@ const navLinks = (await getCollection('navigation')).map(nav => nav.data)
         </button>
         <div id="nav-links-wrapper" class="gap-[16px]">
           {navLinks.map(link => (
-            <a href={link.url} class={`heading nav-link`}>{link.text}</a>
+            <a href={link.url} class={`heading nav-link ${link.isActive ? "active-link" : ""}`}>{link.text}</a>
           ))}
         </div>
       </section>
     </div>
     <div class="hidden md:flex">
-      <div class="flex items-center gap-[24px]">
+      <div class="flex items-start gap-[24px]">
         {navLinks.map(link => (
-          <a href={link.url} class={`nav-link text-[1rem]`}>{link.text}</a>
+          <a href={link.url} class={`nav-link text-[1rem] ${link.isActive ? "active-link" : ""}`}>{link.text}</a>
         ))}
       </div>
     </div>

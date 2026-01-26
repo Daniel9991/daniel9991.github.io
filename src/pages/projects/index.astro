@@ -3,6 +3,7 @@ import {getCollection} from 'astro:content'
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectCard from '../../components/ProjectCard.astro';
 import BaseLayoutWithHeaderFooter from '../../layouts/BaseLayoutWithHeaderFooter.astro';
+import Container from '../../components/Container.astro';
 const projects = (await getCollection('projects')).map(project => project.data)
 const images = import.meta.glob('../../assets/images/projects/*', {
   eager: true,
@@ -11,16 +12,16 @@ const images = import.meta.glob('../../assets/images/projects/*', {
 ---
 
 <BaseLayoutWithHeaderFooter>
-  <ul class="project-cards-wrapper">
-    {projects.map(project => {
-      const image = images[`../../assets/images/projects/${project.imgName}`];
-
-      return (
-        <li>
+  <Container>
+    <div class="mt-[24px] flex flex-col gap-[24px] list-none md:grid grid-cols-2">
+      {projects.map(project => {
+        const image = images[`../../assets/images/projects/${project.imgName}`];
+  
+        return (
           <ProjectCard project={project} image={image} />
-        </li>
-    )})}
-  </ul>
+      )})}
+    </div>
+  </Container>
 </BaseLayoutWithHeaderFooter>
 <style>
   .project-cards-wrapper{
