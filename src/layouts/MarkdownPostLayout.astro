@@ -1,27 +1,26 @@
 ---
-import BaseLayout from "./BaseLayout.astro"
+import Container from "../components/Container.astro"
 import BaseLayoutWithHeaderFooter from "./BaseLayoutWithHeaderFooter.astro"
 
 const { frontmatter } = Astro.props
 ---
 <BaseLayoutWithHeaderFooter>
-  <div class="container mt-[64px]">
+  <Container>
     <header class="post-header">
       <h2 class="post-title">{frontmatter.title}</h2>
       <div class="post-header-secondary-info">
         <p class="author-tag">by {frontmatter.author} - {frontmatter.pubDate.toString().slice(0, 10)}</p>
       </div>
     </header>
-    <div class="post-body">
+    <div class="post-body prose prose-invert">
       <slot />
     </div>
-  </div>
+  </Container>
 </BaseLayoutWithHeaderFooter>
 <style>
   .post-body{
     max-width: 700px;
     margin: 0 auto;
-    font-size: 1.25rem;
   }
   .post-header-secondary-info{
     margin-top: 8px;
@@ -29,10 +28,11 @@ const { frontmatter } = Astro.props
   }
   .post-title{
     font-size: 2rem;
+    line-height: 2rem;
     font-weight: 500;
   }
   .post-header{
-    margin: 0 auto 48px;
+    margin: 24px auto 48px;
     display: flex;
     flex-direction: column;
     max-width: 700px;
