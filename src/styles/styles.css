@@ -242,17 +242,6 @@ nav{
   background-color: theme('colors.footer-bg');
 }
 
-#icons8-notice{
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.7);
-  width: fit-content;
-  margin: 0 auto;
-}
-
-#icons8-notice a{
-  display: inline-block;
-}
-
 .technology-pill{
   border: 1.5px solid #FCE762;
   padding: 6px 12px;

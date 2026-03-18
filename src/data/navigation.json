@@ -13,5 +13,10 @@
     "id": "blog",
     "text": "Blog",
     "url": "/blog" 
+  },
+  {
+    "id": "contact",
+    "text": "Contact",
+    "url": "/contact" 
   }
 ]

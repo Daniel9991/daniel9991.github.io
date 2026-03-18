@@ -25,6 +25,7 @@ const socialLinks = defineCollection({
   loader: file("src/data/social-links.json"),
   schema: z.object({
     id: z.string(),
+    imageId: z.string(),
     iconSrc: z.string(),
     link: z.string().url(),
   })
