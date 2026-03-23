@@ -9,7 +9,7 @@ interface Props {
 const { project, image } = Astro.props
 ---
 <article class="project-card bg-footer-bg flex flex-col">
-  <img src={image.src} alt="" class="project-card-image">
+  <img class="p-4" src={image.src} alt="" class="project-card-image">
   <section class="project-card-body flex-grow flex flex-col justify-between">
     <div>
       <header class="project-card-header">

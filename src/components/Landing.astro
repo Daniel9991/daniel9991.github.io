@@ -6,6 +6,18 @@ import Header from "./Header.astro"
 
 const socialLinks = (await getCollection("socialLinks")).map(element => element.data)
 ---
+<style>
+  @media screen and (min-width: 1024px) and (min-height: 740px){
+    #landing {
+      min-height: unset;
+      /* border: 2px solid blue; */
+    }
+
+    #landing main {
+      margin: 120px 0;
+    }
+  }
+</style>
 <div id="landing" class="lg:min-h-[100svh] flex flex-col to-70% bg-size-[closest-side] lg:bg-radial from-bg to-[#121212]">
   <Header />
   <main class="py-[96px]">

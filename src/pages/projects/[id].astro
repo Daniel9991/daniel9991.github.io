@@ -12,42 +12,50 @@ export async function getStaticPaths(){
   const projects = await getCollection('projects')
   
   return projects.map(project => {
-    const image = images[`../../assets/images/projects/${project.data.imgName}`];
+    const browserImage = images[`../../assets/images/projects/${project.data.imgName}`];
+    const laptopImage = images[`../../assets/images/projects/${project.data.laptopImage}`];
+    const mobileImage = images[`../../assets/images/projects/${project.data.mobileImage}`];
 
     return {
-      params: { id: project.id }, props: { project: project.data, image }
+      params: { id: project.id }, props: { project: project.data, browserImage, laptopImage, mobileImage }
     }
   })
 }
 
-const { project, image } = Astro.props;
+const { project, browserImage, laptopImage, mobileImage } = Astro.props;
 ---
 <BaseLayoutWithHeaderFooter>
   <Container>
-
     <main>
       <div class="project-name-wrapper">
         <h2 class="project-name">{project.name}</h2>
         <a class="link" target="_blank" href={project.url}>Visit Site</a>
       </div>
       <p class="project-description">{project.description}</p>
-      <img src={image.src} />
-      <div class="content-wrapper">
-        <h3 class="built-with-heading">Built with:</h3>
-        <div class="technology-pills-wrapper">
-          {project.technologies.map(tech => (
-            <span class="technology-pill">{tech}</span>
-          ))}
+      <div class="my-[48px] flex flex-col md:flex-row gap-[24px]">
+        <img class="min-w-0" src={browserImage.src} />
+        <img class="max-w-[300px] w-[100%] md:w-[auto] mx-auto md:max-w-[unset] min-w-0" src={mobileImage.src} />
+      </div>
+      <div class=" flex flex-col lg:flex-row-reverse justify-end flex-start gap-[24px]">
+        <div>
+          <h3 class="built-with-heading">Built with:</h3>
+          <div class="technology-pills-wrapper">
+            {project.technologies.map(tech => (
+              <span class="technology-pill">{tech}</span>
+            ))}
+          </div>
         </div>
         {project.overview && project.overview.length > 0
           ? (
-            <h3 class="overview-heading">Overview</h3>
-            <div>
-              {project.overview.map(paragraph => (
-                <p class="overview-paragraph">
-                  {paragraph}
-                </p>
-              ))}
+            <div class="max-w-[600px]">
+              <h3 class="overview-heading">Overview</h3>
+              <div class="">
+                {project.overview.map(paragraph => (
+                  <p class="overview-paragraph">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
           ) : null
         }
@@ -63,7 +71,6 @@ const { project, image } = Astro.props;
     margin-top: 16px;
   }
   .overview-heading{
-    margin-top: 24px;
     font-weight: normal
   }
   .technology-pills-wrapper{
@@ -74,13 +81,8 @@ const { project, image } = Astro.props;
   }
   .built-with-heading{
     font-weight: 400;
-    margin-top: 24px;
   }
-  img{
-    display: block;
-    max-width: 100%;
-    margin-top: 24px;
-  }
+  
   .project-name-wrapper{
     padding-top: 64px;
     display: flex;
@@ -94,7 +96,7 @@ const { project, image } = Astro.props;
     font-weight: 500;
   }
   .project-description{
-    margin-top: 16px;
+    margin-top: 8px;
     font-size: 1rem;
     line-height: 1.5rem;
     color: rgba(255,255,255,0.7);

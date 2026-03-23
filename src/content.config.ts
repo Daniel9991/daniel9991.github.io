@@ -17,7 +17,9 @@ const projects = defineCollection({
     url: z.string().url(),
     technologies: z.array(z.string()),
     imgName: z.string(),
-    overview: z.array(z.string()).or(z.undefined())
+    overview: z.array(z.string()).or(z.undefined()),
+    laptopImage: z.string().or(z.undefined()),
+    mobileImage: z.string().or(z.undefined()),
   })
 });
 

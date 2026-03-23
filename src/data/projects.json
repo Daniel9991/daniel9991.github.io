@@ -5,11 +5,13 @@
     "url": "https://ledesmas-cakes.vercel.app",
     "description": "Freelance website for a small bakery to show products and collect orders.",
     "technologies": ["Next.js", "TailwindCSS", "Supabase"],
-    "imgName": "ledesmas-cakes.png",
+    "imgName": "ledesmas_cakes_browser_paddingless.png",
     "overview": [
       "This is the website for a small delivery-first bakery. Its main purpose is to show users the available products with their price, images and maybe a description. Another feature is letting users pick products and submitting their 'cart' to the bakery through a template Whatsapp message.",
       "The website was developed with Next.js App router. It leverages Server and Client components to combine server rendering with client side interactivity when required. A Zustand store (accesible by a context provider) handles some global state related to the products and the cart."
-    ]
+    ],
+    "laptopImage": "ledesmas_cakes_browser.png",
+    "mobileImage": "ledesmas_cakes_mobile_paddingless.png"
   },
   {
     "id": "tempus",
@@ -17,10 +19,12 @@
     "url": "https://daniel9991.github.io/tempus",
     "description": "An online stopwatch and timer with a neumorphic design.",
     "technologies": ["HTML", "CSS", "JavaScript"],
-    "imgName": "tempus.png",
+    "imgName": "tempus_browser_paddingless.png",
     "overview": [
       "Tempus is a stopwatch/timer built using HTML, CSS and vanilla JavaScript. It provides basic functionality without the need to sign up/log in.",
       "The main reason for building this project was using neumorphic design."
-    ]
+    ],
+    "laptopImage": "tempus_laptop.png",
+    "mobileImage": "tempus_mobile_paddingless.png"
   }
 ]
