@@ -7,7 +7,7 @@ const allPosts = await getCollection('blogs')
 <BaseLayoutWithHeaderFooter>
   <Container>
     <div class="max-w-[700px]">
-      <p class="mt-[24px]">This is my developer journal. It contains blog posts where I explain things that I did or learn, small tutorials for myself and other, and notes and code snippets for whenenver I can't recall how to do somthing.</p>
+      <p class="mt-[24px]">This is my developer journal. It contains blog posts where I explain things that I did or learn, small tutorials for myself and other, and notes and code snippets for whenever I can't recall how to do somthing.</p>
       <ul class="posts-list">
         {allPosts.map(post => <a class="text-[1.1rem] link" href={`/blog/${post.id}`}>{post.data.title}</a>)}
       </ul>

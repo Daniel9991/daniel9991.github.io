@@ -134,7 +134,7 @@ For example, the function was used like this:
 and the description: 
 `Crea un **cake** a tu gusto, escogiendo **cantidad de capas**, de **rellenos**, y **diámetro**. Tú lo imaginas, nosotros lo hacemos realidad.`
 resulted in:
-<image width="400px" style="margin:40px auto;" src="images/post-1/cake_with_emph_desc.png">
+<img width="400px" style="margin:40px auto;" src="/blog/images/post-1/cake_with_emph_desc.png">
 
 
 ## What did I learn with this?
